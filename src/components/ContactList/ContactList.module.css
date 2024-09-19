@@ -1,0 +1,104 @@
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+.contactContent {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.confirmDelete {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.undoDelete {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.containerBtn {
+  padding: 15px 15px 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirmDelete button {
+  background-color: #e74c3c;
+}
+
+.confirmDelete button:last-child {
+  background-color: #16eb5d;
+}
+
+.deleteSelectedButton {
+  visibility: hidden;
+  opacity: 0;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.deleteSelectedButton.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.deleteSelectedButton:hover {
+  background-color: #c0392b;
+}
+
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checkbox:hover {
+  border-color: #14eb1e;
+}
+
+.checkbox:checked {
+  background-color: #3eeb78;
+  border-color: #007bff;
+}
+
+.checkbox:checked::before {
+  content: "✔";
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
